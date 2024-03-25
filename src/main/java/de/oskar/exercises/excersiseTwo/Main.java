@@ -1,4 +1,4 @@
-package de.oskar;
+package main.java.de.oskar.exercises.excersiseTwo;
 
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
