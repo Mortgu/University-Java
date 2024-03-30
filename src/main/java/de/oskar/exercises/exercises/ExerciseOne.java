@@ -1,4 +1,4 @@
-package main.java.de.oskar.exercises;
+package de.oskar.exercises.exercises;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,20 @@ public class ExerciseOne {
     public ExerciseOne() {
         List<Integer> primeNumbers = getPrimeNumbers(1000);
         printList(primeNumbers);
+
+        //new ExerciseOne();
+        for (int i = 0; i <= 1000; i++) {
+            int counter = 0;
+            for (int y = i; y >= 1; y--) {
+                if (i % y == 0) {
+                    counter++;
+                }
+            }
+
+            if (counter == 2) {
+                System.out.println(i);
+            }
+        }
     }
 
     /* Übungsblatt 1 - Aufgabe 4 */
