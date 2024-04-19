@@ -1,4 +1,4 @@
-package de.oskar.exercises.excersiseTwo;
+package de.oskar.exercises.second;
 
 import java.util.ArrayList;
 import java.util.List;

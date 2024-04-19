@@ -1,11 +1,6 @@
 package de.oskar.exercises;
 
-import de.oskar.exercises.excersiseTwo.ExerciseTwo;
-import de.oskar.exercises.excersiseTwo.RevenueSection;
-import de.oskar.exercises.exercises.ExerciseOne;
-
-import java.util.ArrayList;
-import java.util.List;
+import de.oskar.exercises.second.ExerciseTwo;
 
 public class Main {
     public static void main(String[] args) {

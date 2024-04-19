@@ -1,4 +1,4 @@
-package de.oskar.exercises.excersiseTwo;
+package de.oskar.exercises.second;
 
 public class RevenueSection {
     final String section;
