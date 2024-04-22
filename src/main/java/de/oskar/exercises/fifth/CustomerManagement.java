@@ -27,6 +27,12 @@ public class CustomerManagement extends JFrame {
 
         menuBar.add(menu = new JMenu("File"));
 
+        customerTableModel = new CustomerTableModel(customers);
+        JTable table = new JTable(customerTableModel);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        customerSelectModel = table.getSelectionModel();
+        customerSelectModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
         menu.add(item = new JMenuItem("Edit Customers"));
         item.addActionListener(new ActionListener() {
             @Override
@@ -34,12 +40,6 @@ public class CustomerManagement extends JFrame {
                 editCustomer();
             }
         });
-
-        customerTableModel = new CustomerTableModel(customers);
-        JTable table = new JTable(customerTableModel);
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        customerSelectModel = table.getSelectionModel();
-        customerSelectModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         table.addMouseListener(new MouseAdapter() {
             @Override
@@ -66,7 +66,7 @@ public class CustomerManagement extends JFrame {
 
     private void editCustomer() {
         int row = customerSelectModel.getMinSelectionIndex();
-        new CustomerEditDialog(this, customerTableModel.getCustomer(row));
+        new CustomerEditDialog(this, customerTableModel.getCustomer(row == -1 ? 0 : row));
         customerTableModel.fireTableRowsUpdated(row, row);
     }
 
