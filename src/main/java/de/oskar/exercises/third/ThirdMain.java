@@ -3,18 +3,18 @@ package de.oskar.exercises.third;
 public class ThirdMain {
 
     public static void main(String[] args) {
-        Mitarbeiter mitarbeiter = new Mitarbeiter("Oskar", "Sammet");
-        Mitarbeiter mitarbeiter2 = new Mitarbeiter("Tom", "Rauh");
+        Mitarbeiter peter = new Mitarbeiter("Peter Fox");
+        Mitarbeiter hans = new Mitarbeiter("Hans");
 
         GehaltsAbrechnung gehaltsAbrechnung =
-                new GehaltsAbrechnung(2, mitarbeiter, 2500.0);
+                new GehaltsAbrechnung(1, peter, 2500.0);
         LohnAbrechnung lohnAbrechnung =
-                new LohnAbrechnung(2, mitarbeiter, 33, 84.95);
+                new LohnAbrechnung(1, peter, 33, 84.95);
 
         GehaltsAbrechnung gehaltsAbrechnung2 =
-                new GehaltsAbrechnung(3, mitarbeiter2, 2500.0);
+                new GehaltsAbrechnung(2, hans, 2500.0);
         LohnAbrechnung lohnAbrechnung2 =
-                new LohnAbrechnung(3, mitarbeiter2, 33, 84.95);
+                new LohnAbrechnung(2, hans, 14, 15);
 
         System.out.println(gehaltsAbrechnung);
         System.out.println(lohnAbrechnung);

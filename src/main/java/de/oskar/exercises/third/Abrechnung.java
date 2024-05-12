@@ -11,7 +11,7 @@ public abstract class Abrechnung {
     }
 
     public int getPeriode() {
-        return 0;
+        return periode;
     }
 
     public Mitarbeiter getMitarbeiter() {
@@ -21,7 +21,6 @@ public abstract class Abrechnung {
     public abstract double getVerdienst();
 
     public String toString() {
-        return "periode=" + periode + ", mitarbeiter='" + mitarbeiter.getFirstName() + " " +
-                mitarbeiter.getLastName() + "', verdienst=" + getVerdienst();
+        return "periode=" + periode + ", mitarbeiter='" + mitarbeiter.getName() + "', verdienst=" + getVerdienst();
     }
 }

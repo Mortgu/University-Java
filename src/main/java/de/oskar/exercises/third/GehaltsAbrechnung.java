@@ -13,12 +13,4 @@ public class GehaltsAbrechnung extends Abrechnung {
     public double getVerdienst() {
         return gehalt;
     }
-
-    public double getGehalt() {
-        return gehalt;
-    }
-
-    public void setGehalt(double gehalt) {
-        this.gehalt = gehalt;
-    }
 }

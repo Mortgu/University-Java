@@ -3,36 +3,22 @@ package de.oskar.exercises.third;
 public class Mitarbeiter {
 
     private static int id = 0;
-    private String firstName, lastName;
+    private String name;
 
-    public Mitarbeiter(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-
+    public Mitarbeiter(String name) {
+        this.name = name;
         id++;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public static void setId(int id) {
+        Mitarbeiter.id = id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
     public String toString() {
-        return "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName;
+        return "id=" + id + ", name=" + name;
     }
 }

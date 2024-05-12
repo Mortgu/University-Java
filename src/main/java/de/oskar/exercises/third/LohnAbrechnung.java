@@ -15,20 +15,4 @@ public class LohnAbrechnung extends Abrechnung {
     public double getVerdienst() {
         return stundenLohn * anzahlStunden;
     }
-
-    public double getStundenLohn() {
-        return stundenLohn;
-    }
-
-    public void setStundenLohn(double stundenLohn) {
-        this.stundenLohn = stundenLohn;
-    }
-
-    public double getAnzahlStunden() {
-        return anzahlStunden;
-    }
-
-    public void setAnzahlStunden(double anzahlStunden) {
-        this.anzahlStunden = anzahlStunden;
-    }
 }
