@@ -21,5 +21,9 @@ public class Main {
         System.out.println();
 
         exerciseTwo.printRevenue();
+
+        new Test();
+
     }
+
 }

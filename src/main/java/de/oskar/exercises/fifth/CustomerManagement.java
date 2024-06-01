@@ -37,7 +37,6 @@ public class CustomerManagement extends JFrame {
         menuBar.add(menu = new JMenu("File"));
 
         // Create a table with the customerTableModel
-        customerTableModel = new CustomerTableModel(customers);
         JTable table = new JTable(customerTableModel);
 
         // Set the table's auto resize mode
@@ -60,8 +59,13 @@ public class CustomerManagement extends JFrame {
         customerSelectModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // Add an "Edit Customers" item to the "File" menu
-        menu.add(item = new JMenuItem("Edit Customers"));
-        item.addActionListener(new ActionListener() {
+        JMenuItem editItem = new JMenuItem("Edit Customer");
+        if (table.getSelectionModel().isSelectionEmpty()) {
+            editItem.setEnabled(false);
+        }
+        menu.add(editItem);
+
+        editItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Edit the selected customer when the item is clicked
@@ -75,6 +79,7 @@ public class CustomerManagement extends JFrame {
             public void mousePressed(MouseEvent e) {
                 // Edit the selected customer when a row is double clicked
                 if (e.getClickCount() == 2) editCustomer();
+                editItem.setEnabled(true);
             }
         });
 
@@ -100,6 +105,9 @@ public class CustomerManagement extends JFrame {
     // Opens a dialog to edit the selected customer
     private void editCustomer() {
         int row = customerSelectModel.getMinSelectionIndex();
+        if (row == -1) {
+
+        }
         new CustomerEditDialog(this, customerTableModel.getCustomer(row == -1 ? 0 : row));
         customerTableModel.fireTableRowsUpdated(row, row);
     }
