@@ -1,19 +1,31 @@
 package de.oskar.exercises.third;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.StreamTokenizer;
+
 public class MitarbeiterListe {
 
     private int size;
     private Mitarbeiter[] mitarbeiter;
 
-    public MitarbeiterListe(int size) {
+    public MitarbeiterListe(int size) throws FileNotFoundException {
         this.size = size;
         mitarbeiter = new Mitarbeiter[size];
-    }
 
-    boolean addMitarbeiter(Mitarbeiter mitarbeiter) {
+        BufferedReader br = new BufferedReader(new FileReader("fileName"));
+        StreamTokenizer st = new StreamTokenizer(br);
+        st.whitespaceChars(',', ',');
+     }
+
+    public boolean add(Mitarbeiter mitarbeiter) {
         if (this.mitarbeiter[this.mitarbeiter.length-1] != null) {
             this.size = this.size*2;
-            this.mitarbeiter = new Mitarbeiter[this.size];
+
+            Mitarbeiter[] temp = new Mitarbeiter[this.size];
+            System.arraycopy(this.mitarbeiter, 0, temp, 0, this.mitarbeiter.length);
+            this.mitarbeiter = temp;
         }
 
         for (int i = 0; i < this.mitarbeiter.length; i++) {

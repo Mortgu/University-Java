@@ -10,7 +10,7 @@ public class Main {
         tabelle.addEintrag("dwa", 12);
         tabelle.addEintrag("wa", 99);
 
-        TabelleTableModel tabelleTableModel = new TabelleTableModel(tabelle.getTabellenEintragList());
+        tabelle.build();
 
 
         for (TabellenEintrag eintrag : tabelle.getTabellenEintragList()) {

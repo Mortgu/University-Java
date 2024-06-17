@@ -5,10 +5,12 @@ import java.util.List;
 
 public class TabelleTableModel extends AbstractTableModel {
 
+    private final Tabelle tabelle;
     private final List<TabellenEintrag> entries;
 
-    public TabelleTableModel(List<TabellenEintrag> entries) {
-        this.entries = entries;
+    public TabelleTableModel(Tabelle tabelle) {
+        this.tabelle = tabelle;
+        this.entries = tabelle.getTabellenEintragList();
     }
 
     @Override
@@ -48,7 +50,9 @@ public class TabelleTableModel extends AbstractTableModel {
 
         switch (columnIndex) {
             case 1: tabellenEintrag.setClubName((String) aValue);
-            case 2: tabellenEintrag.setPunkte(Integer.parseInt(aValue.toString()));
+            case 2: {
+                this.tabelle.updatePunkte(rowIndex, Integer.parseInt(aValue.toString()));
+            }
             default: return;
         }
     }

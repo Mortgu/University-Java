@@ -1,28 +1,26 @@
 package de.oskar.exercises;
 
 import de.oskar.exercises.second.ExerciseTwo;
+import de.oskar.exercises.third.Mitarbeiter;
+import de.oskar.exercises.third.MitarbeiterListe;
+
+import java.io.FileNotFoundException;
 
 public class Main {
-    public static void main(String[] args) {
-        ExerciseTwo exerciseTwo = new ExerciseTwo();
+    public static void main(String[] args) throws FileNotFoundException {
+        MitarbeiterListe mitarbeiterListe = new MitarbeiterListe(2);
 
-        exerciseTwo.setRevenue("Bremen", 5000.0);
-        exerciseTwo.setRevenue("Dresden", 9000.0);
-        exerciseTwo.setRevenue("Frankfurt", 12000.0);
-        exerciseTwo.setRevenue("Hamburg", 1000.0);
-        exerciseTwo.setRevenue("Hannover", 8000.0);
-        exerciseTwo.setRevenue("Köln", 3000.0);
-        exerciseTwo.setRevenue("Leipzig", 3000.0);
-        exerciseTwo.setRevenue("München", 4000.0);
-        exerciseTwo.setRevenue("Potsdam", 5000.0);
-        exerciseTwo.setRevenue("Stuttgart", 8000.0);
+        mitarbeiterListe.add(new Mitarbeiter("Oskar Schindler"));
+        mitarbeiterListe.add(new Mitarbeiter("Valentin Schindler"));
 
-        ExerciseTwo.setFlop(exerciseTwo.getRevenues());
-        System.out.println();
+        mitarbeiterListe.add(new Mitarbeiter("Tom Schindler"));
+        mitarbeiterListe.add(new Mitarbeiter("Andreas Schindler"));
 
-        exerciseTwo.printRevenue();
-
-        new Test();
+        for (Mitarbeiter m : mitarbeiterListe.getMitarbeiter()) {
+            if (m != null) {
+                System.out.println(m);
+            }
+        }
 
     }
 
