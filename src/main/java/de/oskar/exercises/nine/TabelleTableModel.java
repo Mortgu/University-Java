@@ -46,12 +46,14 @@ public class TabelleTableModel extends AbstractTableModel {
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
         TabellenEintrag tabellenEintrag = this.entries.get(rowIndex);
 
-        System.out.println(aValue.getClass());
-
         switch (columnIndex) {
-            case 1: tabellenEintrag.setClubName((String) aValue);
+            case 1: {
+                tabellenEintrag.setClubName((String) aValue);
+                return;
+            }
             case 2: {
                 this.tabelle.updatePunkte(rowIndex, Integer.parseInt(aValue.toString()));
+                return;
             }
             default: return;
         }
